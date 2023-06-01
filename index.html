@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<h1>Progress Through the Year, Month, and Day</h1>
+
+<div class="myProgress">
+  <div id="yearProgress" class="myBar"></div>
+</div>
+<br>
+<div class="myProgress">
+  <div id="monthProgress" class="myBar"></div>
+</div>
+<br>
+<div class="myProgress">
+  <div id="dayProgress" class="myBar"></div>
+</div>
+
+<script>
+function move() {
+  var elem = document.getElementById("yearProgress"); 
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+
+// Do the same for month and day, calculating the percentage based on the current date.
+</script>
+
+</body>
+</html>
