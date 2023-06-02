@@ -21,38 +21,7 @@ body {
 </head>
 <body>
 
-<h1>Progress Through the Year, Month, and Day</h1>
-
-<div class="myProgress">
-  <div id="yearProgress" class="myBar"></div>
-</div>
-<br>
-<div class="myProgress">
-  <div id="monthProgress" class="myBar"></div>
-</div>
-<br>
-<div class="myProgress">
-  <div id="dayProgress" class="myBar"></div>
-</div>
-
-<script>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.myProgress {
-  width: 100%;
-  background-color: #f3f3f3;
-}
-
-.myBar {
-  width: 1%;
-  height: 30px;
-  background-color: #4CAF50;
-}
-</style>
-</head>
-<body>
+<h1>Progress Through the Year, Month, Day, and Life</h1>
 
 <h2>Day Progress</h2>
 <div class="myProgress">
@@ -104,12 +73,6 @@ var birthDate = new Date('1992-02-29');
 var endOfLife = new Date(birthDate.getFullYear() + 81, birthDate.getMonth(), birthDate.getDate());
 var percentageOfLife = (now - birthDate) / (endOfLife - birthDate) * 100;
 document.getElementById("lifeProgress").style.width = percentageOfLife + '%';
-</script>
-
-</body>
-</html>
-
-
 </script>
 
 </body>
