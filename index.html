@@ -12,7 +12,7 @@ body {
 
 .myProgress {
   width: 80%;
-  background-color: transparent;  /* Updated this line */
+  background-color: #333;
   margin: auto;
 }
 
@@ -20,30 +20,31 @@ body {
   width: 1%;
   height: 7.5px;
   background-color: #4CAF50;
+  border-radius: 5px;  /* Add this line */
 }
 </style>
 </head>
 <body>
 
-<h2>Day Progress</h2>
+<h2>Day Progress - <span id="dayProgressPercent"></span>%</h2>  <!-- Updated this line -->
 <div class="myProgress">
   <div id="dayProgress" class="myBar"></div>
 </div>
 <br>
 
-<h2>Month Progress</h2>
+<h2>Month Progress - <span id="monthProgressPercent"></span>%</h2>  <!-- Updated this line -->
 <div class="myProgress">
   <div id="monthProgress" class="myBar"></div>
 </div>
 <br>
 
-<h2>Year Progress</h2>
+<h2>Year Progress - <span id="yearProgressPercent"></span>%</h2>  <!-- Updated this line -->
 <div class="myProgress">
   <div id="yearProgress" class="myBar"></div>
 </div>
 <br>
 
-<h2>Life Progress</h2>
+<h2>Life Progress - <span id="lifeProgressPercent"></span>%</h2>  <!-- Updated this line -->
 <div class="myProgress">
   <div id="lifeProgress" class="myBar"></div>
 </div>
@@ -57,25 +58,22 @@ var now = new Date();
 var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 var percentageOfDay = (now - startOfDay) / (1000 * 60 * 60 * 24) * 100;
 document.getElementById("dayProgress").style.width = percentageOfDay + '%';
+document.getElementById("dayProgressPercent").innerText = percentageOfDay.toFixed(2);  <!-- Add this line -->
 
 // Calculate the progress through the month.
 var startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
 var endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
 var percentageOfMonth = (now - startOfMonth) / (endOfMonth - startOfMonth) * 100;
 document.getElementById("monthProgress").style.width = percentageOfMonth + '%';
+document.getElementById("monthProgressPercent").innerText = percentageOfMonth.toFixed(2);  <!-- Add this line -->
 
 // Calculate the progress through the year.
 var startOfYear = new Date(now.getFullYear(), 0, 1);
 var endOfYear = new Date(now.getFullYear() + 1, 0, 1);
 var percentageOfYear = (now - startOfYear) / (endOfYear - startOfYear) * 100;
 document.getElementById("yearProgress").style.width = percentageOfYear + '%';
+document.getElementById("yearProgressPercent").innerText = percentageOfYear.toFixed(2);  <!-- Add this line -->
 
 // Calculate the progress through your lifespan.
 var birthDate = new Date('1992-02-29'); 
-var endOfLife = new Date(birthDate.getFullYear() + 81, birthDate.getMonth(), birthDate.getDate());
-var percentageOfLife = (now - birthDate) / (endOfLife - birthDate) * 100;
-document.getElementById("lifeProgress").style.width = percentageOfLife + '%';
-</script>
-
-</body>
-</html>
+var endOfLife = new Date(birthDate.getFullYear() + 81, birthDate.getMonth(), birth
